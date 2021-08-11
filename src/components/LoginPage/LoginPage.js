@@ -25,8 +25,7 @@ function LoginPage() {
             localStorage.setItem("userName",user.userName)
             history.push("/roomlist");
           }else{
-            const newUser = userRef.push();
-            newUser.set(user);
+            userRef.push().set(user);
             localStorage.setItem("userName",user.userName)
             history.push("/roomlist");
           } 
