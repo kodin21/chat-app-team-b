@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Button } from "reactstrap";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   width: 100vw;
@@ -29,7 +29,7 @@ export const Title = styled.h2`
   margin-bottom: 1.5rem;
 `;
 
-export const RoomButton = styled(Button)`
+export const RoomButton = styled(Link)`
   background-color: var(--btn-color);
   width: 20rem;
   margin-bottom: 1.5rem;
@@ -38,11 +38,17 @@ export const RoomButton = styled(Button)`
   border-radius: 10px;
   transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
   font-size: 1.5rem;
+  color: var(--white-color);
+  text-decoration: none;
+  text-align: center;
+
 
   &:hover {
+    color: var(--white-color);
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.16);
     transform: translate(0, -5px);
     background-color: var(--bg-color);
+
   }
 `;
 
@@ -52,5 +58,5 @@ export const RoomContainer = styled.div`
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
-  padding: 0 1rem;
+  padding: 1rem;
 `;

@@ -48,6 +48,11 @@ function RoomList() {
     });
   };
   
+  const roomTitleUrl = (roomName) => {
+
+    return roomName.replace(/ /g, '-').toLowerCase();
+  }
+
   return (
     <Container>
       <Card>
@@ -56,7 +61,7 @@ function RoomList() {
         <RoomContainer >
           {
             rooms[0] && Object.values(rooms[0]).map((room, index) => (
-              <RoomButton key={index} action onClick={() => { click(room.room) }} >{room.room} 
+              <RoomButton to={{pathname: `/rooms/${roomTitleUrl(room.room)}` }} key={index} action onClick={() => { click(room.room) }} >{room.room} 
               </RoomButton>
             ))
           }
