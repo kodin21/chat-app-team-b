@@ -29,6 +29,12 @@ export const Title = styled.h2`
   margin-bottom: 1.5rem;
 `;
 
+export const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const RoomButton = styled(Link)`
   background-color: var(--btn-color);
   width: 20rem;
@@ -42,13 +48,11 @@ export const RoomButton = styled(Link)`
   text-decoration: none;
   text-align: center;
 
-
   &:hover {
     color: var(--white-color);
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.16);
     transform: translate(0, -5px);
     background-color: var(--bg-color);
-
   }
 `;
 
@@ -59,4 +63,29 @@ export const RoomContainer = styled.div`
   flex-direction: column;
   overflow-y: scroll;
   padding: 1rem;
+`;
+
+export const LogoutButton = styled(Link)`
+  text-decoration: none;
+  background-color: red;
+  color: var(--white-color);
+  width: 3rem;
+  height: 3rem;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  margin-left: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.16);
+    transform: scale(1.2);
+    background-color: var(--bg-color);
+    color: var(--white-color);
+  }
 `;

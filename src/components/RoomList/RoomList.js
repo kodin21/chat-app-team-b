@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Container, RoomButton, Title, RoomContainer } from './styles';
+import { Card, Container, RoomButton, Title, RoomContainer, LogoutButton, ButtonContainer } from './styles';
 import firebase from '../../firebase/firebase';
 import AddRoom from '../AddRoom/AddRoom';
 
@@ -45,8 +45,8 @@ function RoomList() {
           newRoomUser.nickname = roomUser;
           newRoomUser.status = 'online';
 
-          const newRoomUser = roomUsersRef.push();
-          newRoomUser.set(newRoomUser);
+          const newUser = roomUsersRef.push();
+          newUser.set(newRoomUser);
         }
       });
   };
@@ -55,11 +55,21 @@ function RoomList() {
     return roomName.replace(/ /g, '-');
   };
 
+  const logoutHandler = () => {
+    localStorage.removeItem("userName");
+    
+  };
+
   return (
     <Container>
       <Card>
         <Title>Rooms</Title>
-        <AddRoom />
+        <ButtonContainer>
+          <AddRoom />
+          <LogoutButton to="/" onClick={logoutHandler}>
+            <i class="fas fa-sign-out-alt"></i>
+          </LogoutButton>
+        </ButtonContainer>
         <RoomContainer>
           {rooms[0] &&
             Object.values(rooms[0]).map((room, index) => (
