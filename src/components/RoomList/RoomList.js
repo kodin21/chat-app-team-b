@@ -64,12 +64,9 @@ function RoomList() {
           {rooms[0] &&
             Object.values(rooms[0]).map((room, index) => (
               <RoomButton
-                to={{ pathname: `/rooms/${roomTitleUrl(room.room)}` }}
+                to={{ pathname: `/chatroom/${roomTitleUrl(room.room)}` }}
                 key={index}
-                action
-                onClick={() => {
-                  click(room.room);
-                }}
+                onClick={() => click(room.room)}
               >
                 {room.room}
               </RoomButton>
