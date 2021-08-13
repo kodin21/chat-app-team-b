@@ -2,18 +2,22 @@ import React, { useEffect, useState } from "react";
 import { Card, Container, RoomButton, Title, RoomContainer } from "./styles";
 import firebase from "../../firebase/firebase";
 import AddRoom from "../AddRoom/AddRoom";
-import { useHistory } from "react-router-dom";
 
 function RoomList() {
   const [rooms, setRooms] = useState([]);
 
   const roomRef = firebase.database().ref("rooms/");
-  let history = useHistory();
+  const roomUsersRef = firebase.database().ref("roomusers/");
+
+  let roomUser = localStorage.getItem('userName');
+  const newRoomUser = { roomname: '', nickname: '', status: '' };
+
   useEffect(() => {
     roomRef.on("value", (snap) => {
       setRooms([snap.val()]);
     });
   }, []);
+
   const snapshotToArray = (snapshot) => {
     const returnArr = [];
 
@@ -24,41 +28,26 @@ function RoomList() {
     });
 
     return returnArr;
-}
-  const Click = (roomname) => {
-    
-    const roomUsersRef = firebase.database().ref("roomusers/");
-    let roomUser=localStorage.getItem('userName')
-    const newroomuser = { roomname: '', nickname: '', status: '' };
+  }
+
+  const click = (roomname) => {
 
     roomUsersRef.orderByChild('nickname').equalTo(roomUser).on('value', (resp) => {
-      let roomuser = [];
-      roomuser = snapshotToArray(resp);
-      const user = roomuser.find(x => x.nickname === roomUser);
+      let participants = [];
+      participants = snapshotToArray(resp);
+      const user = participants.find(participant => participant.nickname === roomUser);
       if(user===undefined)
       {
-        newroomuser.roomname=roomname;
-        newroomuser.nickname=roomUser;
-        newroomuser.status="online";
-    
+        newRoomUser.roomname=roomname;
+        newRoomUser.nickname=roomUser;
+        newRoomUser.status="online";
     
         const newRoomUser =roomUsersRef.push();
-        newRoomUser.set(newroomuser);
-
+        newRoomUser.set(newRoomUser);
       }
-      
+    });
+  };
   
-      
-  });
-    
-    history.push("/chatroom/:room");
-    
-      
-    };
-  
- 
-
-
   return (
     <Container>
       <Card>
@@ -67,12 +56,11 @@ function RoomList() {
         <RoomContainer >
           {
             rooms[0] && Object.values(rooms[0]).map((room, index) => (
-              <RoomButton key={index} action onClick={() => { Click(room.room) }} >{room.room} 
+              <RoomButton key={index} action onClick={() => { click(room.room) }} >{room.room} 
               </RoomButton>
             ))
           }
         </RoomContainer>
-        
       </Card>
     </Container>
   );
