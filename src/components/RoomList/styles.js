@@ -32,7 +32,7 @@ export const Title = styled.h2`
 export const RoomButton = styled(Button)`
   background-color: var(--btn-color);
   width: 20rem;
-  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
   cursor: pointer;
   border-radius: 10px;
@@ -52,4 +52,5 @@ export const RoomContainer = styled.div`
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
+  padding: 0 1rem;
 `;
