@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# ⚛️ Chat App with ReactJS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<a href="https://team-b-react-chat-app.netlify.app/login">Live Preview</a>
 
-## Available Scripts
+# 🎞 Screenshot
 
-In the project directory, you can run:
+![Proje Resmi](public/screenshot1.png)
+![Proje Resmi](public/screenshot2.png)
+![Proje Resmi](public/screenshot3.png)
 
-### `npm start`
+# 👨‍💻👩‍💻 Contributors
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<ul style="list-style-type:disc">
+   <li><a href="https://github.com/bstkpnr">Beste Tokpınar</a></li>
+   <li><a href="https://github.com/Reyhandede">Reyhan Dede</a></li>
+   <li><a href="https://github.com/ahmetkelek">Ahmet Kelek</a></li>
+   <li><a href="https://github.com/alperenmehmet">Mehmet Alperen</a></li>
+   <li><a href="https://github.com/codeunlu">Mustafa Ünlü</a></li>
+   <li><a href="https://github.com/MhmtMutlu">Mehmet Mutlu</a></li>
+</ul>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Ödev - Chat APP
 
-### `npm test`
+Birden çok odası bulunan, herkesin oda ekleyebildiği, herkesin anonim olarak herhangi bir odaya katılıp mesajlaşabildiği bir live chat app yapmanızı bekliyorum. Çok temelde chat appimiz üç ekrandan oluşuyor.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [x] Ana ekran (/login) ekranı
 
-### `npm run build`
+  -> Ekranda [Kullanici Adi] inputu ve [giris yap] butonu var.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  -> Herkes istediği username ile giriş yapabilir.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  -> Sifre sormaz, kayit mantigi yoktur. Herkes hizlica giris yapip mesajlasmaya baslayabilir.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [x] Oda Listesi (/rooms) ekrani
 
-### `npm run eject`
+  -> Giris sonrasi mevcut tum odalar listelenir. [Genel, GoyGoy, Teknoloji, ...] gibi odalar oluşturabilirsiniz.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  -> Bu ekranda istenirse yeni oda eklenebilir(Ekranin en altina bir yeni oda ekle butonu / input'u eklemek kafi.)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  -> Herhangi bir odanin uzerine gelindiginde odada kac kisi oldugu yazar ve chat'e katil butonu vardir.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- [x] Chat room (/room/room-name)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  -> Odaya katildiginiz zaman sol tarafta oda listesi gorunmeye devam eder. Sag tarafta bir chat kutusu ve chat gecmisi vardir. Anlik yazilanlar chat vasitasiyla gonderilir. Diger kisilerin ekranina anlik duser. (Discord gibi dusunun)
