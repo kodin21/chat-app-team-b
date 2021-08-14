@@ -10,7 +10,7 @@ import ChatRoom from "./components/ChatRoom/ChatRoom";
 import AddRoom from "./components/AddRoom/AddRoom";
 import RoomList from "./components/RoomList/RoomList";
 import {BsSun,BsMoon} from 'react-icons/bs'
-
+import {Button} from 'react-bootstrap'
 
 function App() {
   const [darkMode, setDarkMode]=useState();
@@ -19,11 +19,10 @@ function App() {
     console.log(`Is in dark mode? ${darkMode}`);
   }, [darkMode]);
   return (
-    <div className="App" data-theme={darkMode ? 'dark' :'light'}>
-      <div id ='icon'  onClick={toggleDarkMode} >
-      {darkMode ? <BsSun size='sm'/> : <BsMoon size='sm' />}
-    </div>
-
+    <div  data-theme={darkMode ? 'dark' :'light'} className="d-grid gap-2">
+    <div id ='icon'  onClick={toggleDarkMode}  >
+      {darkMode ? <BsSun /> : <BsMoon size='sm' />}
+      </div>
     <Router>
       <Switch>
         <Route path="/login">
