@@ -156,7 +156,7 @@ function ChatRoom() {
       });
   };
 
-  const exitChat = (e) => {
+  const exitChat = () => {
     const chat = {
       roomname: "",
       nickname: "",
