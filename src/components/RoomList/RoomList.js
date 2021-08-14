@@ -47,6 +47,10 @@ function RoomList() {
 
           const newUser = roomUsersRef.push();
           newUser.set(newRoomUser);
+        } else {
+          const user = participants.find((x) => x.nickname === roomUser);
+          const userRef = firebase.database().ref("roomusers/" + user.key);
+          userRef.update({ status: "online" });
         }
       });
   };
