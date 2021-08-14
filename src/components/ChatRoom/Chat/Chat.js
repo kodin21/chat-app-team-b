@@ -46,7 +46,7 @@ function Chat({ room, nickname, chats, newchat, setNewchat, roomname }) {
   };
 
   const takeFirstLetterFromName = (name) => {
-    return name[0].toUpperCase();
+    return name[0]?.toUpperCase();
   }
 
   return (
