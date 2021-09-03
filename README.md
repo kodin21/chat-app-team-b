@@ -2,7 +2,7 @@
 
 <a href="https://team-b-react-chat-app.netlify.app/login">Live Preview</a>
 
-# 🎞 Screenshot
+## 🎞 Screenshot
 
 ![Proje Resmi](public/screenshot1.png)
 ![Proje Resmi](public/screenshot2.png)
